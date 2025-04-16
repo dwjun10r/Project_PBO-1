@@ -1,5 +1,7 @@
 package Login;
 
 public class Login {
-    System.out.println("Login Berhasil");
+    public void tampilkanLoginBerhasil() {
+        System.out.println("Login Berhasil");
+    }
 }
