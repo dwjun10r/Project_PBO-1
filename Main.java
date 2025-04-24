@@ -32,7 +32,7 @@ public class Main {
         switch (pilihan) {
             case 1: {
                 Login login = new Login();
-                login.tampilkanLoginBerhasil();
+                login.loginUser();
                 break;
             }
             case 2: {

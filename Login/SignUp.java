@@ -9,8 +9,6 @@ public class SignUp {
     private String username;
     private String password;
 
-
-
     // Fungsi untuk mendaftarkan user baru
     public void daftarUserBaru() {
         Scanner scanner = new Scanner(System.in);
@@ -31,7 +29,16 @@ public class SignUp {
             File userFile = new File(folderUser, username + ".txt");
 
             if (userFile.exists()) {
-                System.out.println("\nUsername sudah digunakan. Silakan coba username lain.\n");
+                System.out.println("\nUsername sudah digunakan.");
+                System.out.println("1. Coba lagi");
+                System.out.println("2. Keluar");
+                System.out.print("Pilih: ");
+                String opsi = scanner.nextLine();
+                if (opsi.equals("2")) {
+                    return;
+                } else {
+                    continue;
+                }
             } else {
                 break;
             }
