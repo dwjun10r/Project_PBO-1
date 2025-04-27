@@ -1,5 +1,3 @@
-package SBN;
-
 public class SBN {
     private String nama;
     private double bunga;

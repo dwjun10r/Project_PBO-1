@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a294c84-1f48-450f-87b5-2a21585ab976" name="Changes" comment="SignUp Update" />
+    <list default="true" id="1a294c84-1f48-450f-87b5-2a21585ab976" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/InvestmentManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Portofolio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SBN/SBN.java" beforeDir="false" afterPath="$PROJECT_DIR$/SBN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saham/Saham.java" beforeDir="false" afterPath="$PROJECT_DIR$/Saham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +32,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -26,12 +41,12 @@
     &quot;assignee&quot;: &quot;Duelisgood&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:/dwjun10r/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line.git&quot;,
-    &quot;accountId&quot;: &quot;334aacfd-27eb-40be-aaf9-8a642775022a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/dwjun10r/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line",
+    "accountId": "334aacfd-27eb-40be-aaf9-8a642775022a"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -54,14 +69,31 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mrkol&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mrkol\IdeaProjects\Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line" />
+      <recent name="C:\Users\mrkol\IdeaProjects\Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line\Saham" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,6 +112,12 @@
       <updated>1744817234440</updated>
       <workItem from="1744817235539" duration="3642000" />
       <workItem from="1744894368484" duration="3627000" />
+      <workItem from="1745502209420" duration="2579000" />
+      <workItem from="1745505462330" duration="671000" />
+      <workItem from="1745753934297" duration="804000" />
+      <workItem from="1745754752970" duration="3735000" />
+      <workItem from="1745783350769" duration="36000" />
+      <workItem from="1745783388133" duration="164000" />
     </task>
     <task id="LOCAL-00001" summary="New Folden n File">
       <option name="closed" value="true" />
@@ -121,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744897766239</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Login dan SignUp Update">
+      <option name="closed" value="true" />
+      <created>1745503598838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745503598838</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update">
+      <option name="closed" value="true" />
+      <created>1745754240976</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745754240976</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +185,8 @@
     <MESSAGE value="New Folden n File" />
     <MESSAGE value="New File" />
     <MESSAGE value="SignUp Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="SignUp Update" />
+    <MESSAGE value="Login dan SignUp Update" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>

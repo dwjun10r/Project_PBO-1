@@ -1,8 +1,3 @@
-package Login;
-
-import Saham.Saham;
-import SBN.SBN;
-
 import java.util.*;
 
 public class Customer {
@@ -20,8 +15,23 @@ public class Customer {
             System.out.println("5. Portofolio");
             System.out.println("6. Keluar");
             System.out.print("Pilih menu: ");
-            int pilihan = scanner.nextInt();
-            scanner.nextLine();
+
+            int pilihan = -1;
+            boolean validInput = false;
+
+            // Validasi input untuk menu Customer
+            while (!validInput) {
+                try {
+                    pilihan = Integer.parseInt(scanner.nextLine());
+                    if (pilihan < 1 || pilihan > 6) {
+                        System.out.println("Pilihan tidak valid. Coba lagi.");
+                    } else {
+                        validInput = true;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Input harus berupa angka. Coba lagi.");
+                }
+            }
 
             switch (pilihan) {
                 case 1:

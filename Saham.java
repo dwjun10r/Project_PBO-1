@@ -1,5 +1,3 @@
-package Saham;
-
 public class Saham {
     private String kode;
     private String namaPerusahaan;

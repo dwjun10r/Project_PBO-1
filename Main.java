@@ -1,55 +1,58 @@
-import java.util.Scanner;
-import Login.Login;
-import Login.SignUp;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+
+        List<Saham> daftarSaham = new ArrayList<>();
+        List<SBN> daftarSBN = new ArrayList<>();
+
+
+        Admin admin = new Admin();
+        Customer customer = new Customer();
+
         Scanner scanner = new Scanner(System.in);
-        int pilihan = 0;
 
         while (true) {
-            System.out.println("==== MENU UTAMA ====");
-            System.out.println("1. Login");
-            System.out.println("2. Sign Up");
-            System.out.println("3. Exit");
-            System.out.print("Masukkan pilihan: ");
+            System.out.println("\n--- Menu Utama ---");
+            System.out.println("1. Masuk sebagai Admin");
+            System.out.println("2. Masuk sebagai Customer");
+            System.out.println("3. Keluar");
+            System.out.print("Pilih menu: ");
 
-            if (scanner.hasNextInt()) {
-                pilihan = scanner.nextInt();
+            int pilihan = -1;
+            boolean validInput = false;
 
-                if (pilihan >= 1 && pilihan <= 3) {
-                    break;
-                } else {
-                    System.out.println("Pilihan harus 1, 2, atau 3. Coba lagi.\n");
+            while (!validInput) {
+                try {
+                    pilihan = Integer.parseInt(scanner.nextLine());
+                    if (pilihan < 1 || pilihan > 3) {
+                        System.out.println("Pilihan tidak valid. Coba lagi.");
+                    } else {
+                        validInput = true;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Input harus berupa angka. Coba lagi.");
                 }
-            } else {
-                System.out.println("Input harus berupa angka. Coba lagi.\n");
-                scanner.next();
+            }
+
+            switch (pilihan) {
+                case 1:
+                    // Masuk menjadi Admin
+                    System.out.println("\nMasuk sebagai Admin...");
+                    admin.menuAdmin(daftarSaham, daftarSBN);
+                    break;
+                case 2:
+                    // Masuk menjadi Customer
+                    System.out.println("\nMasuk sebagai Customer...");
+                    customer.menuCustomer(daftarSaham, daftarSBN);
+                    break;
+                case 3:
+                    // Keluar
+                    System.out.println("Keluar program...");
+                    return;
+                default:
+                    System.out.println("Pilihan tidak valid. Coba lagi.");
             }
         }
-
-
-        switch (pilihan) {
-            case 1: {
-                Login login = new Login();
-                login.loginUser();
-                break;
-            }
-            case 2: {
-                SignUp signUp = new SignUp();
-                signUp.daftarUserBaru();
-                break;
-            }
-            case 3: {
-                System.out.println("Keluar dari program.");
-                break;
-            }
-            default: {
-                System.out.println("Pilihan tidak valid.");
-                break;
-            }
-        }
-
-        scanner.close();
     }
 }
