@@ -53,6 +53,9 @@ public class SignUp {
         try (FileWriter writer = new FileWriter(userFile)) {
             writer.write("Username: " + username + "\n");
             writer.write("Password: " + password + "\n");
+            writer.write("Total Aset: 0\n");
+            writer.write("Total Saldo: 0\n");
+            writer.write("Aset:\n");
             System.out.println("\nAkun berhasil dibuat!");
             System.out.println("Username: " + username);
         } catch (IOException e) {
