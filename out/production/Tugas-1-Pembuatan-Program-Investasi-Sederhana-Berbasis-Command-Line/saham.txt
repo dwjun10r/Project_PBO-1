@@ -1,2 +1,0 @@
-001,SatyaCompany,10000.0
-002,JuniorCompany,10000.0
