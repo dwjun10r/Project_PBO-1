@@ -38,4 +38,13 @@ public class SBN {
     public void setKuotaNasional(double kuotaNasional) {
         this.kuotaNasional = kuotaNasional;
     }
+
+    @Override
+    public String toString() {
+        return "Nama: " + nama +
+                ", Bunga: " + bunga + "%" +
+                ", Jangka Waktu: " + jangkaWaktu + " tahun" +
+                ", Jatuh Tempo: " + tanggalJatuhTempo +
+                ", Kuota Nasional: Rp " + String.format("%.2f", kuotaNasional);
+    }
 }

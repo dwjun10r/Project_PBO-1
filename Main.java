@@ -17,10 +17,16 @@ public class Main {
         Customer customer = new Customer();
 
         while (true) {
-            System.out.println("\n--- Menu Utama ---");
+            System.out.println("===================================");
+            System.out.println("|     INVESTASI SAHAM DAN SBN     |");
+            System.out.println("===================================");
+            System.out.println("===================================");
+            System.out.println("|            Menu Utama           |");
+            System.out.println("===================================");
             System.out.println("1. Login sebagai Admin");
             System.out.println("2. Login sebagai Customer");
             System.out.println("3. Keluar");
+            System.out.println("===================================");
             System.out.print("Pilih menu: ");
 
             int pilihan = -1;
@@ -64,7 +70,7 @@ public class Main {
     }
 
     private static boolean loginAdmin() {
-        System.out.print("\nMasukkan username Admin: ");
+        System.out.print("Masukkan username Admin: ");
         String username = scanner.nextLine();
         System.out.print("Masukkan password Admin: ");
         String password = scanner.nextLine();
