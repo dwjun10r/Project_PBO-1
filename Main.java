@@ -70,6 +70,9 @@ public class Main {
     }
 
     private static boolean loginAdmin() {
+        System.out.println("\n===================================");
+        System.out.println("|           LOGIN ADMIN           |");
+        System.out.println("===================================");
         System.out.print("Masukkan username Admin: ");
         String username = scanner.nextLine();
         System.out.print("Masukkan password Admin: ");
