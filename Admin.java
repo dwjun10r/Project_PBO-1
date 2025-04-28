@@ -7,7 +7,7 @@ public class Admin {
     public void menuAdmin(List<Saham> daftarSaham, List<SBN> daftarSBN) {
         while (true) {
             System.out.println("\n===================================");
-            System.out.println("|            Menu Admin          |");
+            System.out.println("|             Menu Admin          |");
             System.out.println("===================================");
             System.out.println("1. Saham");
             System.out.println("2. SBN");

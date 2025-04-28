@@ -36,11 +36,13 @@ public class Main {
                 try {
                     pilihan = Integer.parseInt(scanner.nextLine());
                     if (pilihan < 1 || pilihan > 3) {
+                        System.out.println("-----------------------------------");
                         System.out.println("Pilihan tidak valid. Coba lagi.");
                     } else {
                         validInput = true;
                     }
                 } catch (NumberFormatException e) {
+                    System.out.println("-----------------------------------");
                     System.out.println("Input harus berupa angka. Coba lagi.");
                 }
             }
@@ -50,6 +52,7 @@ public class Main {
                     if (loginAdmin()) {
                         admin.menuAdmin(daftarSaham, daftarSBN);
                     } else {
+                        System.out.println("-----------------------------------");
                         System.out.println("Login Admin gagal!");
                     }
                     break;
@@ -57,6 +60,7 @@ public class Main {
                     if (loginCustomer()) {
                         customer.menuCustomer(daftarSaham, daftarSBN);
                     } else {
+                        System.out.println("-----------------------------------");
                         System.out.println("Login Customer gagal!");
                     }
                     break;
@@ -64,6 +68,7 @@ public class Main {
                     System.out.println("Keluar dari program...");
                     return;
                 default:
+                    System.out.println("-----------------------------------");
                     System.out.println("Pilihan tidak valid.");
             }
         }
@@ -73,18 +78,21 @@ public class Main {
         System.out.println("\n===================================");
         System.out.println("|           LOGIN ADMIN           |");
         System.out.println("===================================");
-        System.out.print("Masukkan username Admin: ");
+        System.out.print("Masukkan Username Admin: ");
         String username = scanner.nextLine();
-        System.out.print("Masukkan password Admin: ");
+        System.out.print("Masukkan Password Admin: ");
         String password = scanner.nextLine();
 
         return username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASSWORD);
     }
 
     private static boolean loginCustomer() {
-        System.out.print("\nMasukkan username Customer: ");
+        System.out.println("\n===================================");
+        System.out.println("|          LOGIN CUSTOMER         |");
+        System.out.println("===================================");
+        System.out.print("Masukkan Username Customer: ");
         String username = scanner.nextLine();
-        System.out.print("Masukkan password Customer: ");
+        System.out.print("Masukkan Password Customer: ");
         String password = scanner.nextLine();
 
         return username.equals(CUSTOMER_USERNAME) && password.equals(CUSTOMER_PASSWORD);
