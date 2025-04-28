@@ -1,21 +1,25 @@
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    private static final Scanner scanner = new Scanner(System.in);
 
+    // Akun default
+    private static final String ADMIN_USERNAME = "admin";
+    private static final String ADMIN_PASSWORD = "admin123";
+    private static final String CUSTOMER_USERNAME = "user";
+    private static final String CUSTOMER_PASSWORD = "user123";
+
+    public static void main(String[] args) {
         List<Saham> daftarSaham = new ArrayList<>();
         List<SBN> daftarSBN = new ArrayList<>();
-
 
         Admin admin = new Admin();
         Customer customer = new Customer();
 
-        Scanner scanner = new Scanner(System.in);
-
         while (true) {
             System.out.println("\n--- Menu Utama ---");
-            System.out.println("1. Masuk sebagai Admin");
-            System.out.println("2. Masuk sebagai Customer");
+            System.out.println("1. Login sebagai Admin");
+            System.out.println("2. Login sebagai Customer");
             System.out.println("3. Keluar");
             System.out.print("Pilih menu: ");
 
@@ -37,22 +41,43 @@ public class Main {
 
             switch (pilihan) {
                 case 1:
-                    // Masuk menjadi Admin
-                    System.out.println("\nMasuk sebagai Admin...");
-                    admin.menuAdmin(daftarSaham, daftarSBN);
+                    if (loginAdmin()) {
+                        admin.menuAdmin(daftarSaham, daftarSBN);
+                    } else {
+                        System.out.println("Login Admin gagal!");
+                    }
                     break;
                 case 2:
-                    // Masuk menjadi Customer
-                    System.out.println("\nMasuk sebagai Customer...");
-                    customer.menuCustomer(daftarSaham, daftarSBN);
+                    if (loginCustomer()) {
+                        customer.menuCustomer(daftarSaham, daftarSBN);
+                    } else {
+                        System.out.println("Login Customer gagal!");
+                    }
                     break;
                 case 3:
-                    // Keluar
-                    System.out.println("Keluar program...");
+                    System.out.println("Keluar dari program...");
                     return;
                 default:
-                    System.out.println("Pilihan tidak valid. Coba lagi.");
+                    System.out.println("Pilihan tidak valid.");
             }
         }
+    }
+
+    private static boolean loginAdmin() {
+        System.out.print("\nMasukkan username Admin: ");
+        String username = scanner.nextLine();
+        System.out.print("Masukkan password Admin: ");
+        String password = scanner.nextLine();
+
+        return username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASSWORD);
+    }
+
+    private static boolean loginCustomer() {
+        System.out.print("\nMasukkan username Customer: ");
+        String username = scanner.nextLine();
+        System.out.print("Masukkan password Customer: ");
+        String password = scanner.nextLine();
+
+        return username.equals(CUSTOMER_USERNAME) && password.equals(CUSTOMER_PASSWORD);
     }
 }

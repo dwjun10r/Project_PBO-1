@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a294c84-1f48-450f-87b5-2a21585ab976" name="Changes" comment="Update">
-      <change afterPath="$PROJECT_DIR$/InvestmentManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Portofolio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvestmentManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SBN/SBN.java" beforeDir="false" afterPath="$PROJECT_DIR$/SBN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saham/Saham.java" beforeDir="false" afterPath="$PROJECT_DIR$/Saham.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portofolio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +34,12 @@
     &quot;assignee&quot;: &quot;Duelisgood&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dwjun10r/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line",
-    "accountId": "334aacfd-27eb-40be-aaf9-8a642775022a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dwjun10r/Tugas-1-Pembuatan-Program-Investasi-Sederhana-Berbasis-Command-Line&quot;,
+    &quot;accountId&quot;: &quot;334aacfd-27eb-40be-aaf9-8a642775022a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -117,7 +110,8 @@
       <workItem from="1745753934297" duration="804000" />
       <workItem from="1745754752970" duration="3735000" />
       <workItem from="1745783350769" duration="36000" />
-      <workItem from="1745783388133" duration="164000" />
+      <workItem from="1745783388133" duration="1078000" />
+      <workItem from="1745821010985" duration="812000" />
     </task>
     <task id="LOCAL-00001" summary="New Folden n File">
       <option name="closed" value="true" />

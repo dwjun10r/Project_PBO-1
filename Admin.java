@@ -1,10 +1,14 @@
 import java.util.*;
+import java.io.*;
 
 public class Admin {
     private Scanner scanner = new Scanner(System.in);
 
     // Menampilkan menu untuk Admin
     public void menuAdmin(List<Saham> daftarSaham, List<SBN> daftarSBN) {
+        // Muat daftar saham dari file
+        daftarSaham.addAll(bacaSaham());
+
         while (true) {
             System.out.println("\n--- Menu Admin ---");
             System.out.println("1. Tambah Saham");
@@ -14,7 +18,7 @@ public class Admin {
             System.out.println("5. Keluar");
             System.out.print("Pilih menu: ");
             int pilihan = scanner.nextInt();
-            scanner.nextLine(); // konsumsi newline
+            scanner.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -31,6 +35,8 @@ public class Admin {
                     break;
                 case 5:
                     System.out.println("Keluar dari menu Admin.\n");
+                    // Simpan daftar saham ke file saat keluar
+                    simpanSaham(daftarSaham);
                     return;
                 default:
                     System.out.println("Pilihan tidak valid. Coba lagi.");
@@ -49,8 +55,12 @@ public class Admin {
         double harga = scanner.nextDouble();
         scanner.nextLine(); // konsumsi newline
 
-        daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+        Saham sahamBaru = new Saham(kode, namaPerusahaan, harga);
+        daftarSaham.add(sahamBaru);
         System.out.println("Saham berhasil ditambahkan!");
+
+        // Simpan daftar saham ke file setelah menambah saham
+        simpanSaham(daftarSaham);
     }
 
     // Menambah SBN baru
@@ -94,5 +104,34 @@ public class Admin {
                 System.out.println(sbn);
             }
         }
+    }
+
+    // Menyimpan daftar saham ke file
+    private void simpanSaham(List<Saham> daftarSaham) {
+        try (FileWriter writer = new FileWriter("saham.txt")) {
+            for (Saham saham : daftarSaham) {
+                writer.write(saham.getKode() + "," + saham.getNamaPerusahaan() + "," + saham.getHarga() + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("Gagal menyimpan saham: " + e.getMessage());
+        }
+    }
+
+    // Membaca daftar saham dari file
+    private List<Saham> bacaSaham() {
+        List<Saham> daftarSaham = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("saham.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                String kode = data[0];
+                String namaPerusahaan = data[1];
+                double harga = Double.parseDouble(data[2]);
+                daftarSaham.add(new Saham(kode, namaPerusahaan, harga));
+            }
+        } catch (IOException e) {
+            System.out.println("Gagal membaca saham: " + e.getMessage());
+        }
+        return daftarSaham;
     }
 }
