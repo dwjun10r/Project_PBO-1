@@ -2,197 +2,202 @@ import java.util.*;
 
 public class Customer {
     private Scanner scanner = new Scanner(System.in);
-    private Map<String, Integer> sahamDimiliki = new HashMap<>();
-    private Map<String, Double> sbnDimiliki = new HashMap<>();
+
+    private Map<Saham, Integer> portofolioSaham = new HashMap<>();
+    private Map<SBN, Double> portofolioSBN = new HashMap<>();
 
     public void menuCustomer(List<Saham> daftarSaham, List<SBN> daftarSBN) {
-
         while (true) {
-            System.out.println("\n--- Menu Customer ---");
-            System.out.println("1. Lihat Daftar Saham");
-            System.out.println("2. Lihat Daftar SBN");
-            System.out.println("3. Beli Saham");
-            System.out.println("4. Beli SBN");
-            System.out.println("5. Portofolio");
-            System.out.println("6. Keluar");
+            System.out.println("Pilih menu: ");
+            System.out.println("1. Beli Saham: ");
+            System.out.println("2. Jual Saham: ");
+            System.out.println("3. Beli SBN: ");
+            System.out.println("4. Simulasi SBN: ");
+            System.out.println("5. Portofolio: ");
+            System.out.println("6. Logout: ");
             System.out.print("Pilih menu: ");
-
-            int pilihan = -1;
-            boolean validInput = false;
-
-            // Validasi input untuk menu Customer
-            while (!validInput) {
-                try {
-                    pilihan = Integer.parseInt(scanner.nextLine());
-                    if (pilihan < 1 || pilihan > 6) {
-                        System.out.println("Pilihan tidak valid. Coba lagi.");
-                    } else {
-                        validInput = true;
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Input harus berupa angka. Coba lagi.");
-                }
-            }
+            int pilihan = scanner.nextInt();
+            scanner.nextLine();
 
             switch (pilihan) {
                 case 1:
-                    lihatDaftarSaham(daftarSaham);
-                    break;
-                case 2:
-                    lihatDaftarSBN(daftarSBN);
-                    break;
-                case 3:
                     beliSaham(daftarSaham);
                     break;
-                case 4:
+                case 2:
+                    jualSaham();
+                    break;
+                case 3:
                     beliSBN(daftarSBN);
                     break;
+                case 4:
+                    simulasiSBN();
+                    break;
                 case 5:
-                    lihatPortofolio(daftarSaham, daftarSBN);
+                    lihatPortofolio();
                     break;
                 case 6:
-                    System.out.println("Keluar.\n");
+                    System.out.println("Logout");
                     return;
                 default:
-                    System.out.println("Pilih tidak valid. Coba lagi.");
+                    System.out.println("Pilihan Tidak Valid");
             }
         }
     }
 
-    // Melihat daftar saham yang tersedia
-    private void lihatDaftarSaham(List<Saham> daftarSaham) {
-        System.out.println("\n--- Daftar Saham Tersedia ---");
-        if (daftarSaham.isEmpty()) {
-            System.out.println("Tidak ada saham tersedia.");
-            return;
-        }
-        for (int i = 0; i < daftarSaham.size(); i++) {
-            Saham s = daftarSaham.get(i);
-            System.out.println((i + 1) + ". " + s.getKode() + " - " + s.getNamaPerusahaan() + " - Rp" + s.getHarga());
-        }
-    }
-
-    // Melihat daftar SBN yang tersedia
-    private void lihatDaftarSBN(List<SBN> daftarSBN) {
-        System.out.println("\n--- Daftar SBN Tersedia ---");
-        if (daftarSBN.isEmpty()) {
-            System.out.println("Tidak ada SBN tersedia.");
-            return;
-        }
-        for (int i = 0; i < daftarSBN.size(); i++) {
-            SBN sbn = daftarSBN.get(i);
-            System.out.println((i + 1) + ". " + sbn.getNama() + " - Bunga: " + sbn.getBunga() + "% - Kuota: Rp" + sbn.getKuotaNasional());
-        }
-    }
-
-    // Membeli saham
+    // Beli Saham
     private void beliSaham(List<Saham> daftarSaham) {
-        System.out.println("\n--- Beli Saham ---");
         if (daftarSaham.isEmpty()) {
-            System.out.println("Tidak ada saham tersedia.");
+            System.out.println("Tidak Ada Saham Tersedia");
             return;
         }
+
+        System.out.println("\n--- Daftar Saham ---");
         for (int i = 0; i < daftarSaham.size(); i++) {
-            Saham s = daftarSaham.get(i);
-            System.out.println((i + 1) + ". " + s.getKode() + " - " + s.getNamaPerusahaan() + " - Rp" + s.getHarga());
+            System.out.println((i + 1) +  ". " + daftarSaham.get(i));
         }
-
-        System.out.print("Pilih nomor saham: ");
+        System.out.print("Pilih Nomor Saham: ");
         int pilihan = scanner.nextInt();
+        scanner.nextLine();
+
         if (pilihan < 1 || pilihan > daftarSaham.size()) {
-            System.out.println("Pilih tidak valid.");
+            System.out.println("Pilihan Tidak Valid");
             return;
         }
+
         Saham sahamDipilih = daftarSaham.get(pilihan - 1);
+        System.out.print("Masukkan Jumlah Lembar Yang Dibeli: ");
+        int jumlahLembar = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.print("Masukkan jumlah lembar: ");
-        int jumlah = scanner.nextInt();
-
-        sahamDimiliki.put(sahamDipilih.getKode(), sahamDimiliki.getOrDefault(sahamDipilih.getKode(), 0) + jumlah);
-
-        System.out.println("Pembelian berhasil!");
+        portofolioSaham.put(sahamDipilih, portofolioSaham.getOrDefault(sahamDipilih, 0) + jumlahLembar);
+        System.out.println("Berhasil Membeli Saham " + sahamDipilih.getNamaPerusahaan() + " Sebanyak " + jumlahLembar + " Lembar ");
     }
 
-    // Membeli SBN
-    private void beliSBN(List<SBN> daftarSBN) {
-        System.out.println("\n--- Beli SBN ---");
-        if (daftarSBN.isEmpty()) {
-            System.out.println("Tidak ada SBN tersedia.");
+    // Jual Saham
+    private void jualSaham() {
+        if (portofolioSaham.isEmpty()) {
+            System.out.println("Anda Belum Memiliki Saham");
             return;
         }
-        for (int i = 0; i < daftarSBN.size(); i++) {
-            SBN sbn = daftarSBN.get(i);
-            System.out.println((i + 1) + ". " + sbn.getNama() + " - Bunga: " + sbn.getBunga() + "% - Kuota: Rp" + sbn.getKuotaNasional());
+
+        System.out.println("\n--- Daftar Saham Yang Dimiliki ---");
+        List<Saham> sahamList = new ArrayList<>(portofolioSaham.keySet());
+        for (int i = 0; i < sahamList.size(); i++) {
+            Saham saham =  sahamList.get(i);
+            System.out.println((i + 1) + ". "  + saham + " (Lembar:  " + portofolioSaham.get(saham) + ")");
         }
 
-        System.out.print("Pilih nomor SBN: ");
+        System.out.print("Pilih Nomor Saham Yang Ingin Dijual: ");
         int pilihan = scanner.nextInt();
-        if (pilihan < 1 || pilihan > daftarSBN.size()) {
-            System.out.println("Pilih tidak valid.");
-            return;
-        }
-        SBN sbnDipilih = daftarSBN.get(pilihan - 1);
+        scanner.nextLine();
 
-        System.out.print("Masukkan nominal pembelian: ");
-        double nominal = scanner.nextDouble();
-
-        if (nominal < sbnDipilih.getKuotaNasional()) {
-            System.out.println("Gagal. Kuota tidak mencukupi.");
+        if (pilihan < 1 || pilihan > sahamList.size()) {
+            System.out.println("Pilihan Tidak Valid");
             return;
         }
 
-        sbnDipilih.setKuotaNasional(sbnDipilih.getKuotaNasional() - nominal);
-        sbnDimiliki.put(sbnDipilih.getNama(), sbnDimiliki.getOrDefault(sbnDipilih.getNama(), 0.0) + nominal);
+        Saham sahamDipilih = sahamList.get(pilihan - 1);
+        System.out.print("Masukkan Jumlah Lembar Yang Dijual: ");
+        int jumlahLembar = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.println("Pembelian SBN berhasil!");
+        int lembarDimiliki = portofolioSaham.get(sahamDipilih);
+        if (jumlahLembar > lembarDimiliki) {
+            System.out.println("Gagal. Jumlah Lembar Tidak Mencukupi.");
+        } else if (jumlahLembar == lembarDimiliki) {
+            portofolioSaham.remove(sahamDipilih);
+            System.out.println("Semua Saham Berhasil Dijual.");
+        } else {
+            portofolioSaham.put(sahamDipilih, lembarDimiliki -  jumlahLembar);
+            System.out.println("Sebagian Saham Berhasil Dijual.");
+        }
     }
 
-    // Melihat portofolio
-    private void lihatPortofolio(List<Saham> daftarSaham, List<SBN> daftarSBN) {
-        System.out.println("\n--- Portofolio Investasi ---");
-
-        // Menampilkan saham yang dimiliki
-        System.out.println("\nSaham Dimiliki: ");
-        if (sahamDimiliki.isEmpty()) {
-            System.out.println("Tidak ada saham.");
-        } else {
-            double totalPembelian = 0;
-            double totalPasar = 0;
-            for (String kode : sahamDimiliki.keySet()) {
-                int jumlah = sahamDimiliki.get(kode);
-                Saham saham = null;
-                for (Saham s : daftarSaham) {
-                    if (s.getKode().equalsIgnoreCase(kode)) {
-                        saham = s;
-                        break;
-                    }
-                }
-                if (saham != null) {
-                    double hargaSekarang = saham.getHarga();
-                    System.out.println(kode + " - " + jumlah + " lembar - Harga sekarang: Rp" + hargaSekarang);
-                    totalPembelian += hargaSekarang * jumlah;
-                    totalPasar += hargaSekarang * jumlah;
-                }
-            }
-            System.out.println("Total nilai pasar saham: Rp" + totalPasar);
+    // Beli SBN
+    private void beliSBN(List<SBN> daftarSBN) {
+        if (daftarSBN.isEmpty()) {
+            System.out.println("Tidak Ada SBN tersedia");
+            return;
         }
 
-        // Menampilkan SBN yang dimiliki
-        System.out.println("\nSBN Dimiliki: ");
-        if (sbnDimiliki.isEmpty()) {
-            System.out.println("Tidak ada SBN.");
+        System.out.println("\n--- Daftar SBN ---");
+        for (int i = 0; i < daftarSBN.size(); i++) {
+            System.out.println((i + 1) + ". " + daftarSBN.get(i));
+        }
+        System.out.print("Pilih Nomor SBN: ");
+        int pilihan = scanner.nextInt();
+        scanner.nextLine();
+
+        if (pilihan < 1 || pilihan > daftarSBN.size()) {
+            System.out.println("Pilihan Tidak Valid");
+            return;
+        }
+
+        SBN sbnDipilih = daftarSBN.get(pilihan - 1);
+        System.out.print("Masukkan Nominal Pembelian: ");
+        double nominal = scanner.nextDouble();
+        scanner.nextLine();
+
+        if (nominal > sbnDipilih.getKuotaNasional()) {
+            System.out.println("Gagal. Nominal Melebihi Kouta Nasional.");
+            return;
+        }
+
+        portofolioSBN.put(sbnDipilih, portofolioSBN.getOrDefault(sbnDipilih, 0.0) + nominal);
+        sbnDipilih.setKuotaNasional(sbnDipilih.getKuotaNasional() - nominal);
+        System.out.println("Berhasil Membeli SBN " + sbnDipilih.getNama() + " Senilai Rp " + nominal);
+    }
+
+    // Simulasi SBN
+    private void simulasiSBN() {
+        if (portofolioSBN.isEmpty()) {
+            System.out.println("Anda Belum Memiliki SBN.");
+            return;
+        }
+
+        System.out.println("\n--- Simulasi Kupon SBN Per Bulan ---");
+        for (Map.Entry<SBN, Double>  entry : portofolioSBN.entrySet()) {
+            SBN sbn = entry.getKey();
+            double nominal = entry.getValue();
+            double kuponPerBulan = (sbn.getBunga() / 100 / 12) * 0.9 * nominal;
+            System.out.println(sbn.getNama() + ": Rp " + String.format("%.2f", kuponPerBulan) + " Per Bulan");
+        }
+    }
+
+    // Portofolio
+    private void lihatPortofolio() {
+        System.out.println("\n--- PORTOFOLIO ---");
+
+        if (portofolioSaham.isEmpty()) {
+            System.out.println("Saham: Tidak Ada.");
         } else {
-            for (String nama : sbnDimiliki.keySet()) {
-                double nominal = sbnDimiliki.get(nama);
-                double bungaBulanan = 0;
-                for (SBN s : daftarSBN) {
-                    if (s.getNama().equalsIgnoreCase(nama)) {
-                        bungaBulanan = (s.getBunga() / 100.0 / 12.0 * 0.9 * nominal);
-                        break;
-                    }
-                }
-                System.out.println(nama + " - Nominal: Rp" + nominal + " - Kupon bulanan: Rp" + bungaBulanan);
+            double totalBeliSaham = 0;
+            double totalNilaiPasar = 0;
+            System.out.println("\n--- SAHAM ---");
+            for (Map.Entry<Saham, Integer>  entry : portofolioSaham.entrySet()) {
+                Saham saham = entry.getKey();
+                int jumlah = entry.getValue();
+                double totalBeli = jumlah * saham.getHarga();
+                totalBeliSaham += totalBeli;
+                totalNilaiPasar += totalBeli;
+                System.out.println(saham.getKode() + " - " + saham.getNamaPerusahaan() + ", Lembar: " + jumlah + ", Total Beli: Rp " + String.format("%.2f", totalBeli) + ", Nilai Pasar: Rp " +  String.format("%.2f", jumlah * saham.getHarga()));
             }
+            System.out.println("Total Investasi Saham: Rp " + String.format("%.2f", totalBeliSaham));
+        }
+
+        if (portofolioSaham.isEmpty()) {
+            System.out.println("\nSBN: Tidak Ada.");
+        } else {
+            double totalSBN = 0;
+            System.out.println("\n--- SBN ---");
+            for (Map.Entry<SBN, Double>  entry : portofolioSBN.entrySet()) {
+                SBN sbn = entry.getKey();
+                double nominal = entry.getValue();
+                double kuponBulanan = (sbn.getBunga() / 100 / 12) * 0.9 * nominal;
+                totalSBN += nominal;
+                System.out.println(sbn.getNama() + ", Nominal: Rp " + String.format("%.2f", nominal) + ", Kupon Per Bulan: Rp " +  String.format("%.2f", kuponBulanan));
+            }
+            System.out.println("Total Investasi SBN: Rp " + String.format("%.2f", totalSBN));
         }
     }
 }
