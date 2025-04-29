@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Validasi {
     private  static final Scanner scanner = new Scanner(System.in);
 
-    // src.Validasi Input Int
+    // Validasi Input Int
     public static int inputInt(String pesan) {
         while (true) {
             System.out.print(pesan);
@@ -21,7 +21,7 @@ public class Validasi {
         }
     }
 
-    // src.Validasi Input Double
+    // Validasi Input Double
     public static double inputDouble(String pesan) {
         while (true) {
             System.out.print(pesan);
