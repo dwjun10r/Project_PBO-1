@@ -112,10 +112,10 @@ Pada menu beli SBN, Customer dapat memilih SBN yang diinginkan dan menentukan no
 # Menu Simulasi SBN
 ![Menu Simulasi src.SBN](https://github.com/dwjun10r/Project_PBO-1/blob/cbc100553c1501af06cd2b865fdd8aecddaf8cdf/Readme_md_png/%5B14%5DSimulasiSBN.png)
 
-Pada menu simulasi SBN, Customer dapat melihat estimasi nominal hasil investasi yang diperoleh dari SBN yang dimiliki. jika terjadi kesalahan pada input, sistem akan meminta Customer untuk mengulangi hingga data yang dimasukkan benar.
+Pada menu simulasi SBN, Customer dapat melihat estimasi nominal hasil investasi yang diperoleh dari SBN yang dimiliki. 
 
 # Portofolio
 ![Portofolio](https://github.com/dwjun10r/Project_PBO-1/blob/cbc100553c1501af06cd2b865fdd8aecddaf8cdf/Readme_md_png/%5B15%5DPortofolio.png)
 
-Pada menu portofolio, Customer dapat melihat daftar saham dan SBN yang dimiliki beserta harga masing-masing aset tersebut. Jika terjadi kesalahan pada input, sistem akan meminta Customer untuk mengulangi hingga data yang dimasukkan benar.
+Pada menu portofolio, Customer dapat melihat daftar saham dan SBN yang dimiliki beserta harga masing-masing aset tersebut. 
 
