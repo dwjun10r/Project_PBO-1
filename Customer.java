@@ -6,6 +6,38 @@ public class Customer {
     private Map<Saham, Integer> portofolioSaham = new HashMap<>();
     private Map<SBN, Double> portofolioSBN = new HashMap<>();
 
+    // Validasi Input Int
+    private int inputInt(String pesan) {
+        while (true) {
+            System.out.print(pesan);
+            if (scanner.hasNextInt()) {
+                int nilai = scanner.nextInt();
+                scanner.nextLine();
+                return nilai;
+            } else {
+                System.out.println("-----------------------------------");
+                System.out.println("Input Harus Berupa Angka. Coba Lagi.");
+                scanner.nextLine();
+            }
+        }
+    }
+
+    // Validasi Input Double
+    private double inputDouble(String pesan) {
+        while (true) {
+            System.out.print(pesan);
+            if (scanner.hasNextDouble()) {
+                double nilai = scanner.nextDouble();
+                scanner.nextLine();
+                return nilai;
+            } else {
+                System.out.println("-----------------------------------");
+                System.out.println("Input Harus Berupa Angka Desimal. Coba Lagi.");
+                scanner.nextLine();
+            }
+        }
+    }
+
     public void menuCustomer(List<Saham> daftarSaham, List<SBN> daftarSBN) {
         while (true) {
             System.out.println("\n===================================");
@@ -18,9 +50,7 @@ public class Customer {
             System.out.println("5. Portofolio: ");
             System.out.println("6. Logout: ");
             System.out.println("===================================");
-            System.out.print("Pilih menu: ");
-            int pilihan = scanner.nextInt();
-            scanner.nextLine();
+            int pilihan = inputInt("Pilih menu: ");
 
             switch (pilihan) {
                 case 1:
@@ -62,9 +92,7 @@ public class Customer {
         for (int i = 0; i < daftarSaham.size(); i++) {
             System.out.println((i + 1) +  ". " + daftarSaham.get(i));
         }
-        System.out.print("\nPilih Nomor Saham: ");
-        int pilihan = scanner.nextInt();
-        scanner.nextLine();
+        int pilihan = inputInt("Pilih Nomor Saham: ");
 
         if (pilihan < 1 || pilihan > daftarSaham.size()) {
             System.out.println("-----------------------------------");
@@ -73,9 +101,7 @@ public class Customer {
         }
 
         Saham sahamDipilih = daftarSaham.get(pilihan - 1);
-        System.out.print("Masukkan Jumlah Lembar Yang Dibeli: ");
-        int jumlahLembar = scanner.nextInt();
-        scanner.nextLine();
+        int jumlahLembar = inputInt("Masukkan Jumlah Lembar Yang Dibeli: ");
 
         portofolioSaham.put(sahamDipilih, portofolioSaham.getOrDefault(sahamDipilih, 0) + jumlahLembar);
         System.out.println("-----------------------------------");
@@ -99,9 +125,7 @@ public class Customer {
             System.out.println((i + 1) + ". "  + saham + " (Lembar:  " + portofolioSaham.get(saham) + ")");
         }
 
-        System.out.print("\nPilih Nomor Saham Yang Ingin Dijual: ");
-        int pilihan = scanner.nextInt();
-        scanner.nextLine();
+        int pilihan = inputInt("Pilihan Nomor Saham Yang Ingin Dijual: ");
 
         if (pilihan < 1 || pilihan > sahamList.size()) {
             System.out.println("-----------------------------------");
@@ -110,9 +134,7 @@ public class Customer {
         }
 
         Saham sahamDipilih = sahamList.get(pilihan - 1);
-        System.out.print("Masukkan Jumlah Lembar Yang Dijual: ");
-        int jumlahLembar = scanner.nextInt();
-        scanner.nextLine();
+        int jumlahLembar = inputInt("Masukkan Jumlah Lembar Yang Dijual: ");
 
         int lembarDimiliki = portofolioSaham.get(sahamDipilih);
         if (jumlahLembar > lembarDimiliki) {
@@ -143,9 +165,7 @@ public class Customer {
         for (int i = 0; i < daftarSBN.size(); i++) {
             System.out.println((i + 1) + ". " + daftarSBN.get(i));
         }
-        System.out.print("\nPilih Nomor SBN: ");
-        int pilihan = scanner.nextInt();
-        scanner.nextLine();
+        int pilihan =  inputInt("Pilih Nomor SBN: ");
 
         if (pilihan < 1 || pilihan > daftarSBN.size()) {
             System.out.println("-----------------------------------");
@@ -154,9 +174,7 @@ public class Customer {
         }
 
         SBN sbnDipilih = daftarSBN.get(pilihan - 1);
-        System.out.print("Masukkan Nominal Pembelian: ");
-        double nominal = scanner.nextDouble();
-        scanner.nextLine();
+        double nominal = inputDouble("Masukkan Nominal Pembelian: ");
 
         if (nominal > sbnDipilih.getKuotaNasional()) {
             System.out.println("-----------------------------------");
@@ -212,7 +230,7 @@ public class Customer {
             System.out.println("Total Investasi Saham: Rp " + String.format("%.2f", totalBeliSaham));
         }
 
-        if (portofolioSaham.isEmpty()) {
+        if (portofolioSBN.isEmpty()) {
             System.out.println("\nSBN: Tidak Ada.");
         } else {
             double totalSBN = 0;
