@@ -63,7 +63,7 @@ Setelah melakukan login sebagai admin, maka user akan diberi intruksi kembali pa
 pada input, sistem akan meminta Admin untuk mengulangi hingga data yang dimasukkan benar.
 
 # Menu src.Saham
-![Menu src.Saham](hhttps://github.com/dwjun10r/Project_PBO-1/blob/cbc100553c1501af06cd2b865fdd8aecddaf8cdf/Readme_md_png/%5B3%5DMenuAdmin.png)
+![Menu src.Saham](https://github.com/dwjun10r/Project_PBO-1/blob/77725ed1b5cada1f6a5b7fdefb618e855f833d31/Readme_md_png/%5B6%5DMenuSaham.png)
 
 Saat Admin mengakses menu ini, tersedia opsi untuk menambahkan saham baru atau memperbarui harga saham yang sudah terdaftar.  Jika terjadi kesalahan pada input, sistem akan meminta Admin untuk mengulangi hingga data yang dimasukkan benar.
 
