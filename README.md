@@ -30,6 +30,8 @@ Silakan eksplorasi lebih lanjut kode yang telah disediakan, dan semoga bermanfaa
 
 ![UML](https://github.com/dwjun10r/Project_PBO-1/blob/cbc100553c1501af06cd2b865fdd8aecddaf8cdf/Readme_md_png/%5B16%5DUML.png)
 
+UML adalah singkatan dari Unified Modeling Language (Bahasa Pemodelan Terpadu). Ini adalah bahasa standar yang digunakan untuk memodelkan, mendokumentasikan, dan merancang sistem perangkat lunak, terutama dalam pengembangan perangkat lunak berbasis objek. UML menyediakan serangkaian notasi grafis yang dapat digunakan untuk menggambarkan struktur dan perilaku dari sebuah sistem.
+
 # Bagaimana Program Di jalankan
 Program ini dibuat dengan konsep Object-Oriented Programming (OOP) dan terbagi menjadi beberapa class utama, yaitu Main, Admin, Customer, Saham, dan SBN. Berikut fitur dan konsep utama yang digunakan:
 1. Class dan Object
