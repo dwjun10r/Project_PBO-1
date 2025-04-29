@@ -3,38 +3,6 @@ import java.util.*;
 public class Admin {
     private Scanner scanner = new Scanner(System.in);
 
-    // Validasi Input Int
-    private int inputInt(String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            if (scanner.hasNextInt()) {
-                int nilai = scanner.nextInt();
-                scanner.nextLine();
-                return nilai;
-            } else {
-                System.out.println("-----------------------------------");
-                System.out.println("Input Harus Berupa Angka. Coba Lagi.");
-                scanner.nextLine();
-            }
-        }
-    }
-
-    // Validasi Input Double
-    private double inputDouble(String pesan) {
-        while (true) {
-            System.out.print(pesan);
-            if (scanner.hasNextDouble()) {
-                double nilai = scanner.nextDouble();
-                scanner.nextLine();
-                return nilai;
-            } else {
-                System.out.println("-----------------------------------");
-                System.out.println("Input Harus Berupa Angka Desimal. Coba Lagi.");
-                scanner.nextLine();
-            }
-        }
-    }
-
     // Menampilkan menu untuk Admin
     public void menuAdmin(List<Saham> daftarSaham, List<SBN> daftarSBN) {
         while (true) {
@@ -45,7 +13,7 @@ public class Admin {
             System.out.println("2. SBN");
             System.out.println("3. Logout");
             System.out.println("===================================");
-            int pilihan = inputInt("Pilih Menu: ");
+            int pilihan = Validasi.inputInt("Pilih Menu: ");
 
             switch (pilihan) {
                 case 1:
@@ -74,7 +42,7 @@ public class Admin {
             System.out.println("2. Ubah Harga Saham");
             System.out.println("3. Kembali");
             System.out.println("===================================");
-            int  pilihan = inputInt("Pilih Menu: ");
+            int  pilihan = Validasi.inputInt("Pilih Menu: ");
 
             switch (pilihan) {
                 case 1:
@@ -100,7 +68,7 @@ public class Admin {
             System.out.println("===================================");
             System.out.println("1. Tambah Produk SBN");
             System.out.println("2. Kembali");
-            int   pilihan = inputInt("Pilih Menu: ");
+            int   pilihan = Validasi.inputInt("Pilih Menu: ");
 
             switch (pilihan) {
                 case 1:
@@ -124,7 +92,7 @@ public class Admin {
         String kodeSaham = scanner.nextLine();
         System.out.print("Masukkan nama perusahaan: ");
         String namaPerusahaan = scanner.nextLine();
-        double hargaSaham = inputDouble("Masukkan Harga Saham: ");
+        double hargaSaham = Validasi.inputDouble("Masukkan Harga Saham: ");
 
         daftarSaham.add(new Saham(kodeSaham, namaPerusahaan, hargaSaham));
         System.out.println("-----------------------------------");
@@ -150,7 +118,7 @@ public class Admin {
 
         for (Saham saham : daftarSaham) {
             if (saham.getKode().equalsIgnoreCase(kodeSaham)) {
-                double hargaBaru = inputDouble("Masukkan Harga Baru: ");
+                double hargaBaru = Validasi.inputDouble("Masukkan Harga Baru: ");
                 saham.setHarga(hargaBaru);
                 System.out.println("-----------------------------------");
                 System.out.println("Harga Saham Berhasil Diubah!");
@@ -168,11 +136,11 @@ public class Admin {
         System.out.println("===================================");
         System.out.print("Masukkan Nama SBN: ");
         String namaSBN = scanner.nextLine();
-        double bunga = inputDouble("Masukkan Bunga SBN (% per tahun): ");
-        int jangkaWaktu = inputInt("Masukkan Jangka Waktu (tahun): ");
+        double bunga = Validasi.inputDouble("Masukkan Bunga SBN (% per tahun): ");
+        int jangkaWaktu = Validasi.inputInt("Masukkan Jangka Waktu (tahun): ");
         System.out.print("Masukkan Tanggal Jatuh Tempo: ");
         String tanggalJatuhTempo = scanner.nextLine();
-        double koutaNasional = inputDouble("Masukkan Kouta Nasional: ");
+        double koutaNasional = Validasi.inputDouble("Masukkan Kouta Nasional: ");
 
         daftarSBN.add(new SBN(namaSBN, bunga, jangkaWaktu, tanggalJatuhTempo, koutaNasional));
         System.out.println("-----------------------------------");
