@@ -1,7 +1,7 @@
 # PBO-Tugas1
 
 # Program Investasi Saham dan Surat Berharga Negara (SBN)
-Halo Dunia! Ini adalah proyek Investasi Saham dan Surat Berharga Negara (SBN). demi menuntaskanmenyelesaikan Tugas I PBO KAMI.
+HI! Ini adalah proyek Investasi Saham dan Surat Berharga Negara (SBN). demi menuntaskan dan menyelesaikan Tugas I PBO KAMI.
 
 Program Java ini dirancang untuk dua jenis user dengan akses yang berbeda, yaitu:
 1. Admin memiliki otoritas penuh untuk mengelola produk investasi, seperti menambah, mengubah harga, dan melihat daftar produk Saham dan SBN (Surat Berharga Negara).
@@ -24,7 +24,7 @@ Silakan eksplorasi lebih lanjut kode yang telah disediakan, dan semoga bermanfaa
 
 * Nama  : Pande Putu Satya Naraya Adyana 
   NIM   : 2405551087
-  Matkul: PBO (F)
+  Matkul: PBO (E)
 
 # UML
 
