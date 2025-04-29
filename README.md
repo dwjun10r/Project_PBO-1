@@ -1,11 +1,11 @@
 # PBO-Tugas1
 
 # Program Investasi Saham dan Surat Berharga Negara (SBN)
-Hi! Ini adalah proyek Investasi Saham dan Surat Berharga Negara (SBN). demi menuntaskan dann menyelesaikan Tugas I PBO KAMI.
+Hi! Ini adalah proyek Investasi Saham dan Surat Berharga Negara (SBN). demi menuntaskan dan menyelesaikan Tugas I PBO KAMI.
 
 Program Java ini dirancang untuk dua jenis user dengan akses yang berbeda, yaitu:
-1. Admin memiliki otoritas penuh untuk mengelola produk investasi, seperti menambah, mengubah harga, dan melihat daftar produk Saham dan SBN (Surat Berharga Negara).
-2. Customer diberikan fasilitas untuk melakukan investasi, menjual aset, serta memantau portofolio yang dimilikinya.
+1. Admin dapat menambahkan saham, mengubah harga saham, dan menambahkan produk SBN.
+2. Customer dapat melakukan pembelian dan penjualan saham, pembelian SBN, simulasi SBN, dan melihat portofolio investasi.
 
 Untuk menjaga kualitas input dari pengguna, program ini dilengkapi dengan validasi pada setiap proses input agar tidak terjadi kesalahan saat dijalankan.
 
