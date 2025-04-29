@@ -1,16 +1,18 @@
+package src;
+
 import java.util.*;
 
 public class Admin {
     private Scanner scanner = new Scanner(System.in);
 
-    // Menampilkan menu untuk Admin
+    // Menampilkan menu untuk src.Admin
     public void menuAdmin(List<Saham> daftarSaham, List<SBN> daftarSBN) {
         while (true) {
             System.out.println("\n===================================");
-            System.out.println("|             Menu Admin          |");
+            System.out.println("|             Menu src.Admin          |");
             System.out.println("===================================");
-            System.out.println("1. Saham");
-            System.out.println("2. SBN");
+            System.out.println("1. src.Saham");
+            System.out.println("2. src.SBN");
             System.out.println("3. Logout");
             System.out.println("===================================");
             int pilihan = Validasi.inputInt("Pilih Menu: ");
@@ -32,14 +34,14 @@ public class Admin {
         }
     }
 
-    // Menu Saham
+    // Menu src.Saham
     private void menuSaham(List<Saham> daftarSaham) {
         while (true) {
             System.out.println("\n===================================");
-            System.out.println("|               Saham             |");
+            System.out.println("|               src.Saham             |");
             System.out.println("===================================");
-            System.out.println("1. Tambah Saham");
-            System.out.println("2. Ubah Harga Saham");
+            System.out.println("1. Tambah src.Saham");
+            System.out.println("2. Ubah Harga src.Saham");
             System.out.println("3. Kembali");
             System.out.println("===================================");
             int  pilihan = Validasi.inputInt("Pilih Menu: ");
@@ -60,13 +62,13 @@ public class Admin {
         }
     }
 
-    // Menu SBN
+    // Menu src.SBN
     private void menuSBN(List<SBN> daftarSBN) {
         while (true) {
             System.out.println("\n===================================");
-            System.out.println("|                 SBN             |");
+            System.out.println("|                 src.SBN             |");
             System.out.println("===================================");
-            System.out.println("1. Tambah Produk SBN");
+            System.out.println("1. Tambah Produk src.SBN");
             System.out.println("2. Kembali");
             int   pilihan = Validasi.inputInt("Pilih Menu: ");
 
@@ -83,37 +85,37 @@ public class Admin {
         }
     }
 
-    // Tambah Saham
+    // Tambah src.Saham
     private  void tambahSaham(List<Saham> daftarSaham) {
         System.out.println("\n===================================");
-        System.out.println("|            Tambah Saham         |");
+        System.out.println("|            Tambah src.Saham         |");
         System.out.println("===================================");
-        System.out.print("Masukkan Kode Saham: ");
+        System.out.print("Masukkan Kode src.Saham: ");
         String kodeSaham = scanner.nextLine();
         System.out.print("Masukkan nama perusahaan: ");
         String namaPerusahaan = scanner.nextLine();
-        double hargaSaham = Validasi.inputDouble("Masukkan Harga Saham: ");
+        double hargaSaham = Validasi.inputDouble("Masukkan Harga src.Saham: ");
 
         daftarSaham.add(new Saham(kodeSaham, namaPerusahaan, hargaSaham));
         System.out.println("-----------------------------------");
-        System.out.println("Saham Berhasil Ditambahkan");
+        System.out.println("src.Saham Berhasil Ditambahkan");
     }
 
-    // Ubah Harga Saham
+    // Ubah Harga src.Saham
     private void ubahHargaSaham(List<Saham> daftarSaham) {
         if (daftarSaham.isEmpty()) {
             System.out.println("-----------------------------------");
-            System.out.println("Belum Ada Saham Yang Tersedia.");
+            System.out.println("Belum Ada src.Saham Yang Tersedia.");
             return;
         }
         System.out.println("\n===================================");
-        System.out.println("|            Daftar Saham         |");
+        System.out.println("|            Daftar src.Saham         |");
         System.out.println("===================================");
         for (Saham saham : daftarSaham) {
             System.out.println(saham);
         }
 
-        System.out.print("\nMasukkan Kode Saham Yang Ingin Diubah Harganya: ");
+        System.out.print("\nMasukkan Kode src.Saham Yang Ingin Diubah Harganya: ");
         String kodeSaham = scanner.nextLine();
 
         for (Saham saham : daftarSaham) {
@@ -121,22 +123,22 @@ public class Admin {
                 double hargaBaru = Validasi.inputDouble("Masukkan Harga Baru: ");
                 saham.setHarga(hargaBaru);
                 System.out.println("-----------------------------------");
-                System.out.println("Harga Saham Berhasil Diubah!");
+                System.out.println("Harga src.Saham Berhasil Diubah!");
                 return;
             }
         }
         System.out.println("-----------------------------------");
-        System.out.println("Saham Dengan Kode Tersebut Tidak Ditemukan.");
+        System.out.println("src.Saham Dengan Kode Tersebut Tidak Ditemukan.");
     }
 
-    // Tambah SBN
+    // Tambah src.SBN
     private void tambahSBN(List<SBN> daftarSBN) {
         System.out.println("\n===================================");
-        System.out.println("|            Tambah SBN           |");
+        System.out.println("|            Tambah src.SBN           |");
         System.out.println("===================================");
-        System.out.print("Masukkan Nama SBN: ");
+        System.out.print("Masukkan Nama src.SBN: ");
         String namaSBN = scanner.nextLine();
-        double bunga = Validasi.inputDouble("Masukkan Bunga SBN (% per tahun): ");
+        double bunga = Validasi.inputDouble("Masukkan Bunga src.SBN (% per tahun): ");
         int jangkaWaktu = Validasi.inputInt("Masukkan Jangka Waktu (tahun): ");
         System.out.print("Masukkan Tanggal Jatuh Tempo: ");
         String tanggalJatuhTempo = scanner.nextLine();
@@ -144,7 +146,7 @@ public class Admin {
 
         daftarSBN.add(new SBN(namaSBN, bunga, jangkaWaktu, tanggalJatuhTempo, koutaNasional));
         System.out.println("-----------------------------------");
-        System.out.println("SBN Berhasil Ditambahkan");
+        System.out.println("src.SBN Berhasil Ditambahkan");
         }
 }
 

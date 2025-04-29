@@ -1,3 +1,5 @@
+package src;
+
 public class Saham {
     private String kode;
     private String namaPerusahaan;

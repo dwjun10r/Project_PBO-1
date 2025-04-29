@@ -1,3 +1,5 @@
+package src;
+
 import java.util.*;
 
 public class Main {
@@ -18,13 +20,13 @@ public class Main {
 
         while (true) {
             System.out.println("===================================");
-            System.out.println("|     INVESTASI SAHAM DAN SBN     |");
+            System.out.println("|     INVESTASI SAHAM DAN src.SBN     |");
             System.out.println("===================================");
             System.out.println("===================================");
             System.out.println("|            Menu Utama           |");
             System.out.println("===================================");
-            System.out.println("1. Login sebagai Admin");
-            System.out.println("2. Login sebagai Customer");
+            System.out.println("1. Login sebagai src.Admin");
+            System.out.println("2. Login sebagai src.Customer");
             System.out.println("3. Keluar");
             System.out.println("===================================");
             System.out.print("Pilih menu: ");
@@ -53,7 +55,7 @@ public class Main {
                         admin.menuAdmin(daftarSaham, daftarSBN);
                     } else {
                         System.out.println("-----------------------------------");
-                        System.out.println("Login Admin gagal!");
+                        System.out.println("Login src.Admin gagal!");
                     }
                     break;
                 case 2:
@@ -61,7 +63,7 @@ public class Main {
                         customer.menuCustomer(daftarSaham, daftarSBN);
                     } else {
                         System.out.println("-----------------------------------");
-                        System.out.println("Login Customer gagal!");
+                        System.out.println("Login src.Customer gagal!");
                     }
                     break;
                 case 3:
@@ -78,9 +80,9 @@ public class Main {
         System.out.println("\n===================================");
         System.out.println("|           LOGIN ADMIN           |");
         System.out.println("===================================");
-        System.out.print("Masukkan Username Admin: ");
+        System.out.print("Masukkan Username src.Admin: ");
         String username = scanner.nextLine();
-        System.out.print("Masukkan Password Admin: ");
+        System.out.print("Masukkan Password src.Admin: ");
         String password = scanner.nextLine();
 
         return username.equals(ADMIN_USERNAME) && password.equals(ADMIN_PASSWORD);
@@ -90,9 +92,9 @@ public class Main {
         System.out.println("\n===================================");
         System.out.println("|          LOGIN CUSTOMER         |");
         System.out.println("===================================");
-        System.out.print("Masukkan Username Customer: ");
+        System.out.print("Masukkan Username src.Customer: ");
         String username = scanner.nextLine();
-        System.out.print("Masukkan Password Customer: ");
+        System.out.print("Masukkan Password src.Customer: ");
         String password = scanner.nextLine();
 
         return username.equals(CUSTOMER_USERNAME) && password.equals(CUSTOMER_PASSWORD);

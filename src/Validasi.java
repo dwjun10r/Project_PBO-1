@@ -1,9 +1,11 @@
+package src;
+
 import java.util.Scanner;
 
 public class Validasi {
     private  static final Scanner scanner = new Scanner(System.in);
 
-    // Validasi Input Int
+    // src.Validasi Input Int
     public static int inputInt(String pesan) {
         while (true) {
             System.out.print(pesan);
@@ -19,7 +21,7 @@ public class Validasi {
         }
     }
 
-    // Validasi Input Double
+    // src.Validasi Input Double
     public static double inputDouble(String pesan) {
         while (true) {
             System.out.print(pesan);
